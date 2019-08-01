@@ -78,7 +78,7 @@ var operador;
   var btnDiv = document.getElementById('btnDiv');
   btnDiv.addEventListener('click', function(){
       valor1 = document.getElementById('display').value;
-      operador = "div";
+      operador = "div"; 
       document.getElementById('display').value = "";
   });
 
@@ -86,6 +86,13 @@ var operador;
   btnMult.addEventListener('click', function(){
       valor1 = document.getElementById('display').value;
       operador = "mult";
+      document.getElementById('display').value = "";
+  });
+
+  var btnPot = document.getElementById('btnPot');
+  btnMult.addEventListener('click', function(){
+      valor1 = document.getElementById('display').value;
+      operador = "potencia";
       document.getElementById('display').value = "";
   });
 
@@ -103,6 +110,9 @@ var operador;
       }
       if(operador == "div"){
         result = parseInt(valor1) / parseInt (valor2);
+      }
+      if(operador == "potencia"){
+        result = Math.pow(valor1, valor2);
       }
       document.getElementById('display').value = result;
   });
