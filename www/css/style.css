@@ -34,5 +34,9 @@ body{
 }
 #display {
 	background-color: #000000;
+  color: white;
 }
-
+.inicio{
+  color: white;
+  text-align: center;
+}

@@ -90,9 +90,23 @@ var operador;
   });
 
   var btnPot = document.getElementById('btnPot');
-  btnMult.addEventListener('click', function(){
+  btnPot.addEventListener('click', function(){
       valor1 = document.getElementById('display').value;
       operador = "potencia";
+      document.getElementById('display').value = "";
+  });
+
+  var btnPor = document.getElementById('btnPor');
+  btnPor.addEventListener('click', function(){
+      valor1 = document.getElementById('display').value;
+      operador = "porcentagem";
+      document.getElementById('display').value = "";
+  });
+
+  var btnRaiz = document.getElementById('btnRaiz');
+  btnRaiz.addEventListener('click', function(){
+      valor1 = document.getElementById('display').value;
+      operador = "raiz";
       document.getElementById('display').value = "";
   });
 
@@ -113,6 +127,12 @@ var operador;
       }
       if(operador == "potencia"){
         result = Math.pow(valor1, valor2);
+      }
+      if(operador == "porcentagem"){
+        result = parseInt(valor1) * (valor2) / 100;
+      }
+      if(operador == "raiz"){
+        result = Math.sqrt(valor1);
       }
       document.getElementById('display').value = result;
   });
